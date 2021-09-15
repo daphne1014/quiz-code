@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Question extends Model { }
+class User extends Model {}
 
-Question.init(
+User.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,24 +12,33 @@ Question.init(
             primaryKey: true,
             autoIncrement: true
         },
-        question_text: {
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            validate: {
+                isEmail: true
+            }
+        },
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [1]
+                len: [4]
             }
-        },
-        answer: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
         }
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'question'
+        modelName: 'user'
     }
 );
 
-module.exports = Question;
+module.exports = User;
