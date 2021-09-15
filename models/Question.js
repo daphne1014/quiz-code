@@ -29,6 +29,6 @@ Question.init(
             underscored: true,
             modelName: 'question'
           }
-)
+);
 
 module.exports = Question;
