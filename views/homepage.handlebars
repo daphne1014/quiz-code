@@ -1,50 +1,45 @@
-{{!-- <div class="min-h-screen w-1/2 py-6 flex flex-col  sm:py-12 pt-4">
-
-	<div class=" py-3 sm:max-w-xl sm:mx-auto">
-		<div
-			class="bg-gradient-to-r from-blue-900 to-blue-900 shadow-lg">
-		
-		<div class="p-4 py-10  bg-gradient-to-r from-blue-300 to-blue-900 shadow-lg   sm:p-20">
-			<div class="max-w-md mx-auto">
-				<div>
-					<h1 class="text-2xl font-semibold">Login Form with Floating Labels</h1>
-				</div>
-				<div class="divide-y divide-gray-200">
-					<div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-						<div class="relative">
-							<input autocomplete="off" id="email" name="email" type="text" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Email address" />
-							<label for="email" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Email Address</label>
-						</div>
-						<div class="relative">
-							<input autocomplete="off" id="password" name="password" type="password" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Password" />
-							<label for="password" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
-						</div>
-						<div class="relative">
-							<button class="bg-blue-500 text-white px-2 py-1">Submit</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-        </div>
-	</div>
-</div> --}}
 <div class="pt-8  shadow:lg w-screen mb-12">
     <div class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
-        <div class="flex flex-col text-center bg-gradient-to-r from-blue-400 to-blue-900  shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0 " style="height: 400px">
-            
-                <div class="text-4xl text-blue-900 font-bold mt-20 ">
+
+        <div
+            class="flex flex-col text-center bg-gradient-to-r from-blue-400 to-blue-900  shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0 ">
+            <form class="quiz-form" onsubmit="event.preventDefault();">
+                <div id="quiz-title" class="text-4xl text-blue-900 font-bold mt-14 ">
                     Take a Quiz
-                    </div>
-                    <div class=" text-l text-white pl-12 pr-12 mt-4">
-                    We’ve developed a set of technical interview questions that you can practice multiple times. Take advantage of these opportunity and shine during the technical interview.
-                    </div>
-                    <div class="mt-16">
-                    <button class="p-4 text-xl bg-yellow-200 text-blue-900 rounded-lg shadow-xs cursor-pointer hover:bg-yellow-500 hover:text-gray-100"> Start > </button>
-                    </div>
-                    </div>
-                
-            </div>
+                </div>
+                <div id="quiz-content" class="ml-12 mr-12 p-4 text-l text-white  mt-4 h-28">
+                    We’ve developed a set of technical interview questions that you can practice multiple times. Take
+                    advantage of these opportunity and shine during the technical interview.
+                </div>
+                {{!-- --}}
+               <div class="flex w-full items-center justify-center ">
+                <div id="show-answer" class="hidden">
+                    <div class="flex border rounded-lg overflow-hidden m-4 select-none w-min justify-center ">
+                    <label class="flex radio p-2 cursor-pointer">
+                        <input class="my-auto "  type="radio" name="answer" />
+                        <div class="title px-2  ">True</div>
+                    </label>
+
+                    <label class="flex radio p-2 cursor-pointer">
+                        <input class="my-auto " type="radio" name="answer" />
+                        <div class="title px-2 ">False</div>
+                    </label>
+
+                  <button class="title py-3 my-auto px-5 bg-yellow-200 text-blue-900 hover:bg-yellow-500 hover:text-gray-100 text-sm font-semibold ml-3">Submit</button>
+                  </div>
+                </div>
+               </div>
+                {{!-- --}}
+                <div class="mt-16 mb-8">
+                    <button id="start-stop"
+                        class="p-3 text-xl bg-yellow-200 text-blue-900 rounded-lg shadow-xs cursor-pointer hover:bg-yellow-500 hover:text-gray-100">
+                        Start > </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+</div>
+</div>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="/javascript/homepage.js"></script>
