@@ -21,7 +21,15 @@ Question.init(
         answer: {
             type: DataTypes.BOOLEAN,
             allowNull: false
-        }
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'user',
+              key: 'id'
+            }
+          }
+
     },
     {
         sequelize,
