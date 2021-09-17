@@ -22,4 +22,3 @@ Question.belongsTo(User, {
   onDelete: "cascade"
 });
 module.exports = { Question, Score, User };
-
