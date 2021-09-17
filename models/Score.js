@@ -15,13 +15,6 @@ Score.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
-        },
         correct: {
             type: DataTypes.INTEGER,
             allowNull: false
@@ -30,6 +23,13 @@ Score.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        }
     },
     {
         sequelize,
