@@ -21,7 +21,15 @@ Score.init(
                 model: 'user',
                 key: 'id'
             }
-        }
+        },
+        correct: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        total: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
     },
     {
         sequelize,

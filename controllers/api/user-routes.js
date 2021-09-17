@@ -13,6 +13,31 @@ router.get('/', (req, res) => {
     });
 });
 // get user by id
+router.get('/:id', (req, res) => {
+  User.findOne({
+      attributes: { exclude: ['password'] },
+      where: {
+          id: req.params.id
+      },
+      include: [
+          {
+              model: Score,
+              attributes: ['id', 'score', 'created_at']
+          }
+      ]
+  })
+      .then(dbUserData => {
+          if (!dbUserData) {
+              res.status(404).json({ message: 'No user found with this id' });
+              return;
+          }
+          res.json(dbUserData);
+      })
+      .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+      });
+});
 
 // create new user
 router.post('/', (req, res) => {
