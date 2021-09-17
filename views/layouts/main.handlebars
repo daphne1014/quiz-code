@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <title>Code Quiz</title>
+      <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="bg-white shadow dark:bg-gray-800">
+                <div class="container px-6 py-4 mx-auto">
+                    <div class="flex items-center justify-between">
+
+                        <div class="text-xl font-semibold text-gray-700">
+                            <a class="text-2xl font-bold text-blue-900 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
+                                href="/">Code Quiz</a>
+                        </div>
+
+
+                        <div class="flex ">
+                            <a href="/"
+                                class="block mx-4 mt-2 text-large text-gray-700 capitalize lg:mt-0 hover:text-blue-600 ">Home</a>
+                            <a href="/dashboard"
+                                class="block mx-4 mt-2 text-large text-gray-700 capitalize lg:mt-0 hover:text-blue-600 ">Dashboard</a>
+                            {{#if loggedIn}}
+                            <button id="logout"
+                                class="block mx-4 mt-2 text-large text-gray-700 capitalize lg:mt-0  hover:text-blue-600 ">logout</button>
+                            {{else}}
+                            <a href="/login"
+                                class="block mx-4 mt-2 text-large text-gray-700 capitalize lg:mt-0 hover:text-blue-600 ">login</a>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+
+            </nav>
+
+            <div class="w-full bg-center bg-cover h-80"
+                style="background-image:  url(https://ubiqum.com/assets/uploads/2019/03/untitled-design-1-1-1.png);">
+
+                {{!-- style="background-image: linear-gradient(to right, rgb(0 128 128 / 50%), rgb(0 0 0 / 0%)), url(https://ubiqum.com/assets/uploads/2019/03/untitled-design-1-1-1.png);"> --}}
+
+                <div class="flex p-12 items-center w-full h-full bg-gray-900 bg-opacity-50">
+                    <div class="text-center text-2xl font-semibold ">
+                        <h1 class="text-white uppercase lg:text-4xl">up your knowlege</h1>
+                        {{!-- <p class="p-2 text-blue-400 lg:text-4xl ">for developers of all skill levels</p> --}}
+                    </div>
+                </div>
+            </div>
+        </header>
+           <main>
+             <div class="flex  justify-center bg-gray-200">
+      {{{ body }}}
+      </div>
+    </main>
+    <footer>
+      Thanks for visiting!
+    </footer>
+     </div>
+    {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+    
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</body>
+
+</html>
