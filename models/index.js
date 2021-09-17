@@ -11,8 +11,15 @@ User.hasMany(Score,{
 
 Score.belongsTo(User,{
     foreignKey: 'user_id',
-    onDelete: 'SET NULL'
+    onDelete: "cascade"
 });
-
+User.hasMany(Question, {
+    foreignKey: 'user_id'
+  });
+  
+  Question.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: "cascade"
+  });
 module.exports = {Question,Score,User};
 
