@@ -91,7 +91,7 @@ async function StopQuiz(){
    
     $("#show-answer").hide(); 
     $("#quiz-content").hide(); 
-    let user_id=parseInt($('#myuser').text());
+    let user_id=$("#quiz-page").attr("data-user_id");
     console.log(user_id);
     if (user_id>0){
         let score=parseInt(quizScore*100/(questionNumber-1));
