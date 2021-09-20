@@ -1,6 +1,6 @@
 <div class="pt-8  shadow:lg w-screen mb-12">
-    <div class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
-
+    <div class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0 h-160">
+<div id="myuser" class="hidden">{{user_id}}</div>
         <div
             class="flex flex-col text-center bg-gradient-to-r from-blue-400 to-blue-900  shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0 ">
             <form class="quiz-form" onsubmit="event.preventDefault();">
@@ -16,16 +16,16 @@
                 <div id="show-answer" class="hidden">
                     <div class="flex border rounded-lg overflow-hidden m-4 select-none w-min justify-center ">
                     <label class="flex radio p-2 cursor-pointer">
-                        <input class="my-auto "  type="radio" name="answer" />
+                        <input class="my-auto"  type="radio" id="yes" name="answ" />
                         <div class="title px-2  ">True</div>
                     </label>
 
                     <label class="flex radio p-2 cursor-pointer">
-                        <input class="my-auto " type="radio" name="answer" />
+                        <input class="my-auto" type="radio" id="no" name="answ" />
                         <div class="title px-2 ">False</div>
                     </label>
 
-                  <button class="title py-3 my-auto px-5 bg-yellow-200 text-blue-900 hover:bg-yellow-500 hover:text-gray-100 text-sm font-semibold ml-3">Submit</button>
+                  <button id="submit-answer" class="title py-3 my-auto px-5 bg-yellow-200 text-blue-900 hover:bg-yellow-500 hover:text-gray-100 text-sm font-semibold ml-3">Submit</button>
                   </div>
                 </div>
                </div>

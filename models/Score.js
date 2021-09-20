@@ -15,6 +15,14 @@ Score.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        correct: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        total: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
