@@ -1,1 +1,21 @@
-<p>It is your dashboard</p>
+<div class="flex-wraper max-w-6xl  px-10 m-4 p-4 bg-white  shadow-md">
+
+    <div class="bg-white font-family-karla h-120">
+
+        <div class="w-full flex flex-wrap m-4 content-center" >
+            {{!-- {{#if scores.length}} --}}
+            <div class="w-full text-center">
+                <h2>Score Summary</h2>
+            </div>
+            <div  class="chart-container" style="position: relative; width:80vw">
+                <canvas id="myChart"></canvas>
+            </div>
+            {{!-- {{/if}} --}}
+            {{!-- {{#unless scores.length}}
+            <h2>Please take the quiz to view the summary</h2>
+            {{/unless}} --}}
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/javascript/dashboard.js"></script>
