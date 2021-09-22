@@ -9,7 +9,7 @@ router.get('/', withAuth, (req, res) => {
         where: {
             user_id: req.session.user_id
         },
-        iclude: [
+        include: [
             {
                 model: User,
                 attributes: ['id', 'username', 'email']
@@ -23,7 +23,7 @@ router.get('/', withAuth, (req, res) => {
                 loggedIn: req.session.loggedIn
             })
         })
-        .catch(err => {
+        .catch(err => ""
             console.log(err);
             res.status(500).json(err);
         });
