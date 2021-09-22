@@ -19,6 +19,7 @@ router.get('/', withAuth, (req, res) => {
         .then(dbScoreData => {
             res.render('dashboard', {
                 dbScoreData,
+                user_id:req.session.user_id,
                 loggedIn: req.session.loggedIn
             })
         })
