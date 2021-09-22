@@ -9,7 +9,7 @@ router.get('/', withAuth, (req, res) => {
         where: {
             user_id: req.session.user_id
         },
-        iclude: [
+        include: [
             {
                 model: User,
                 attributes: ['id', 'username', 'email']
@@ -19,6 +19,7 @@ router.get('/', withAuth, (req, res) => {
         .then(dbScoreData => {
             res.render('dashboard', {
                 dbScoreData,
+                user_id:req.session.user_id,
                 loggedIn: req.session.loggedIn
             })
         })
