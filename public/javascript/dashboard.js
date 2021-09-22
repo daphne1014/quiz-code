@@ -1,3 +1,10 @@
+// make fetch request to /api/users/:id
+// include scores in results - done
+// format your data for chart.js
+
+// fetch('/api/users/')
+
+
 // will need to change the data and data sets so that it gets it from db
 const data = {
     labels: ['January',
