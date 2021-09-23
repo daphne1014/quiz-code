@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const { User, Score } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -16,9 +15,22 @@ router.get('/', withAuth, (req, res) => {
             }
         ]
     })
-        .then(dbScoreData => {
+          .then(dbScoreData => {
+            const scores = dbScoreData.map(score => score.get({ plain: true }));
+             lastScore=`${scores[scores.length-1].score}%  -  ${scores[scores.length-1].correct}/ ${scores[scores.length-1].total}`;
+             let correctSum=0; 
+             let totalSum=0; 
+             for (i=0;i<scores.length;i++){
+                correctSum=correctSum + scores[scores.length-1].correct;
+                totalSum= totalSum+ scores[scores.length-1].total;
+             }
+             totalSc=parseInt(correctSum*100/totalSum);
+             totalScore= `${totalSc}%  -  ${correctSum}/ ${totalSum}`
+
             res.render('dashboard', {
-                dbScoreData,
+               scores,
+               lastScore,
+               totalScore,
                 user_id:req.session.user_id,
                 loggedIn: req.session.loggedIn
             })
@@ -28,5 +40,6 @@ router.get('/', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
+
 
 module.exports = router;
