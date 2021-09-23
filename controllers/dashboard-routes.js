@@ -17,10 +17,13 @@ router.get('/', withAuth, (req, res) => {
     })
           .then(dbScoreData => {
             const scores = dbScoreData.map(score => score.get({ plain: true }));
+            
               
             res.render('dashboard', {
                scores,
                 user_id:req.session.user_id,
+                username: req.session.username,
+                email: req.session.email,
                 loggedIn: req.session.loggedIn
             })
         })
