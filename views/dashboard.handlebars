@@ -65,8 +65,10 @@
                    
                         <canvas id="myChart"></canvas>
                    
-                    {{/if}} --}}
-                   {{#unless scores.length}} --}}
+
+                    {{/if}}
+                    {{#unless scores.length}}
+
                     <h2>Please take the quiz to view the summary</h2>
                     {{/unless}}
                 </div>
@@ -109,8 +111,9 @@
                 <div class="flex items-center justify-center pt-10 flex-col">
                     <img src="https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png"
                         class="rounded-full w-32">
-                        <h2>Username: {{username}}</h2>
-                        <h2>Email: {{email}}</h2>
+
+                        <h1>Username: {{username}}</h1>
+                        <h1>Email: {{email}}</h1>
                 </div>
             </div>
         </div>
