@@ -1,0 +1,28 @@
+  </div>
+  <div class="edit-post-form text-center flex-wrap bg-gray-200  p-4 ">
+<a  href="/dashboard"> &larr; Back to dashboard</a>
+  <div class=" flex flex-col  rounded-lg bg-white mx-auto w-10/12 text-gray-800 border border-gray-300 p-4 shadow-lg max-w-2xl">
+    <textarea class="rounded-lg  bg-gray-100 justify-start p-3 h-60 border border-gray-300 outline-none" spellcheck="true" name="question-text"  placeholder="Question">{{post.post_text}}</textarea>
+               <div class="flex flex-wrap mx-auto">
+               <label class=" radio p-2 cursor-pointer">
+                        <input class="my-auto"  type="radio" id="yes" name="answ" value ="true" checked />
+                        <div class="title px-2  ">True</div>
+                    </label>
+
+                    <label class=" radio p-2 cursor-pointer">
+                        <input class="my-auto" type="radio" id="no" name="answ" />
+                        <div class="title px-2 ">False</div>
+                    </label>
+                    </div>
+    <!-- buttons -->
+    
+      <button onclick="addQuestion(event)" class="btn border rounded-lg text-gray-700 m-2  p-1 px-4 cursor-pointer ml-2 bg-pink-300 hover:bg-pink-400">Add Question</button>
+   
+     
+  </div>
+  </div>
+  
+
+
+
+<script src="/javascript/add-question.js"></script>
