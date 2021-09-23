@@ -46,5 +46,15 @@ router.get('/', withAuth, (req, res) => {
         });
 });
 
+router.get('/question/', withAuth, (req, res) => {
+           
+    res.render('add-question', {
+      user_id: req.session.user_id,
+      loggedIn: true
+    });
+ 
+});
+
+
 
 module.exports = router;
