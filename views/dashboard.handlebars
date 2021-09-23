@@ -60,15 +60,15 @@
                         <h2>Score Summary</h2>
                     </div>
                 <div class=" flex  items-center  m-4 mx-auto sm:w-full xl:w-1/2">
-                    {{!-- {{#if scores.length}} --}}
+                    {{#if scores.length}}
                   
                    
                         <canvas id="myChart"></canvas>
                    
-                    {{!-- {{/if}} --}}
-                    {{!-- {{#unless scores.length}}
+                    {{/if}} --}}
+                   {{#unless scores.length}} --}}
                     <h2>Please take the quiz to view the summary</h2>
-                    {{/unless}} --}}
+                    {{/unless}}
                 </div>
             </div>
         </div>
@@ -109,26 +109,10 @@
                 <div class="flex items-center justify-center pt-10 flex-col">
                     <img src="https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png"
                         class="rounded-full w-32">
-                        <h2>User ID: {{user_id}}</h2>
                         <h2>Username: {{username}}</h2>
                         <h2>Email: {{email}}</h2>
                 </div>
             </div>
-        </div>
-
-        <div class="w-full flex flex-wrap m-4 content-center">
-            {{#if scores.length}}
-            <div class="w-full text-center">
-                <h1>Score Summary</h1>
-            </div>
-            <div class="chart-container" style="position: relative; width:80vw">
-                <canvas id="myChart"></canvas>
-            </div>
-            {{/if}}
-            {{#unless scores.length}}
-            <h2>Please take the quiz to view the summary</h2>
-            {{/unless}}
-main
         </div>
     </div>
 </main>
