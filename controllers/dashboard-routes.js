@@ -18,9 +18,22 @@ router.get('/', withAuth, (req, res) => {
           .then(dbScoreData => {
             const scores = dbScoreData.map(score => score.get({ plain: true }));
             
+ dashboard-design
+             lastScore=`${scores[scores.length-1].score}%  -  ${scores[scores.length-1].correct}/ ${scores[scores.length-1].total}`;
+             let correctSum=0; 
+             let totalSum=0; 
+             for (i=0;i<scores.length;i++){
+                correctSum=correctSum + scores[scores.length-1].correct;
+                totalSum= totalSum+ scores[scores.length-1].total;
+             }
+             totalSc=parseInt(correctSum*100/totalSum);
+             totalScore= `${totalSc}%  -  ${correctSum}/ ${totalSum}`
+
               
             res.render('dashboard', {
                scores,
+               lastScore,
+               totalScore,
                 user_id:req.session.user_id,
                 username: req.session.username,
                 email: req.session.email,
