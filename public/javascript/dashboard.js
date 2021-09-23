@@ -34,6 +34,8 @@ const getData = fetch(`/api/users/${user_id}`)
         );
     });
 
+    
+
 // console.log(scores)// 
 
 

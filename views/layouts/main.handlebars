@@ -15,7 +15,7 @@
 <body data-user_id={{this.user_id}}>
     <div class="wrapper">
         <header>
-            <nav class="bg-white shadow dark:bg-gray-800">
+            <nav class="bg-white shadow ">
                 <div class="container px-6 py-4 mx-auto">
                     <div class="flex items-center justify-between">
 
@@ -61,14 +61,8 @@
                 {{{ body }}}
             </div>
         </main>
-        <footer class="bg-coolGray-100 text-coolGray-900">
-            <div class="container flex flex-col p-4 mx-auto md:p-8 lg:flex-row divide-coolGray-600">
-                <ul
-                    class="self-center py-6 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
-                    <li><a href="/">Homepage</a></li>
-                    <li><a href="/dashboard">Dashboard</a></li>
-                </ul>
-                <div class="flex flex-col justify-center pt-6 lg:pt-0">
+        <footer class="pt-6   bg-white text-coolGray-900">
+            <div class="flex flex-col justify-center pt-6 lg:pt-0">
                     <div class="flex justify-center space-x-4">
                         <a href="https://github.com/daphne1014/quiz-code" title="Github"
                             class="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-violet-600 text-coolGray-50">
@@ -86,6 +80,14 @@
                         </a>
                     </div>
                 </div>
+            <div class="flex-col p-2 pb-4 mx-auto  divide-coolGray-600">
+                <div
+                    class="text-center">
+                    <a href="/">Home</a>
+                    <a href="/dashboard">Dashboard</a>
+                
+                </div>
+                
             </div>
         </footer>
     </div>
