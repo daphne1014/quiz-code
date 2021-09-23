@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const { User, Score } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -16,9 +15,11 @@ router.get('/', withAuth, (req, res) => {
             }
         ]
     })
-        .then(dbScoreData => {
+          .then(dbScoreData => {
+            const scores = dbScoreData.map(score => score.get({ plain: true }));
+              
             res.render('dashboard', {
-                dbScoreData,
+               scores,
                 user_id:req.session.user_id,
                 loggedIn: req.session.loggedIn
             })
@@ -28,5 +29,6 @@ router.get('/', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
+
 
 module.exports = router;
