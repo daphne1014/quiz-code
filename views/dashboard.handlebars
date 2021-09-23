@@ -65,8 +65,10 @@
                    
                         <canvas id="myChart"></canvas>
                    
+
                     {{/if}}
                     {{#unless scores.length}}
+
                     <h2>Please take the quiz to view the summary</h2>
                     {{/unless}}
                 </div>
@@ -105,9 +107,11 @@
     <div class="bg-white items-center justify-center font-family-karla h-120">
         <div class-" w-full flex items-center justify-center">
             <div class="bg-white w-1/3 mt-10 rounded-lg items-center justify-center">
+            <h1>Profile Information</h1>
                 <div class="flex items-center justify-center pt-10 flex-col">
                     <img src="https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png"
                         class="rounded-full w-32">
+
                         <h1>Username: {{username}}</h1>
                         <h1>Email: {{email}}</h1>
                 </div>
