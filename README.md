@@ -35,7 +35,7 @@ THEN I am presented with an interative chart that shows 10 most recent quiz resu
   
 ## Website
   
- https://agile-mountain-28181.herokuapp.com/
+https://ucla-code-quiz.herokuapp.com/
 
 ## License 
   
