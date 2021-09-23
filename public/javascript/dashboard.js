@@ -8,13 +8,10 @@ const user_id = document.querySelector('body').getAttribute('data-user_id');
 const getData = fetch(`/api/users/${user_id}`)
     .then(res => res.json())
     .then(res => {
-
         let scoresArray = res.scores;
 
-        let labels = scoresArray.map((score, index) => 'Attempt: ' + (index + 1));
+        let labels = scoresArray.map((score, index) => 'Attempt ' + (index + 1));
         let scores = scoresArray.map(score => score.score);
-        console.table({ labels, scores });
-
         const data = {
             labels: labels,
             datasets: [{
