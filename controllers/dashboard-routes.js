@@ -15,26 +15,38 @@ router.get('/', withAuth, (req, res) => {
             }
         ]
     })
-          .then(dbScoreData => {
+        .then(dbScoreData => {
             const scores = dbScoreData.map(score => score.get({ plain: true }));
-            
- //dashboard-design
-             lastScore=`${scores[scores.length-1].score}%  -  ${scores[scores.length-1].correct}/ ${scores[scores.length-1].total}`;
-             let correctSum=0; 
-             let totalSum=0; 
-             for (i=0;i<scores.length;i++){
-                correctSum=correctSum + scores[i].correct;
-                totalSum= totalSum+ scores[i].total;
-             }
-             totalSc=parseInt(correctSum*100/totalSum);
-             totalScore= `${totalSc}%  -  ${correctSum}/ ${totalSum}`
+            console.log(scores);
 
-              
+            //dashboard-design
+            let correctSum = 0;
+            let totalSum = 0;
+            let totalSc = 0;
+            let lastScore = 'No data';
+            let totalScore = 'No data';
+
+            if (scores.length > 0) {
+                lastScore = `${scores[scores.length - 1].score}%  -  ${scores[scores.length - 1].correct}/ ${scores[scores.length - 1].total}`;
+               
+
+                for (i = 0; i < scores.length; i++) {
+                    correctSum = correctSum + scores[i].correct;
+                    totalSum = totalSum + scores[i].total;
+                }
+
+                totalSc = parseInt(correctSum * 100 / totalSum);
+                totalScore = `${totalSc}%  -  ${correctSum}/ ${totalSum}`
+            }
+
+
+
+
             res.render('dashboard', {
-               scores,
-               lastScore,
-               totalScore,
-                user_id:req.session.user_id,
+                scores,
+                lastScore,
+                totalScore,
+                user_id: req.session.user_id,
                 username: req.session.username,
                 email: req.session.email,
                 loggedIn: req.session.loggedIn
@@ -47,12 +59,12 @@ router.get('/', withAuth, (req, res) => {
 });
 
 router.get('/question/', withAuth, (req, res) => {
-           
+
     res.render('add-question', {
-      user_id: req.session.user_id,
-      loggedIn: true
+        user_id: req.session.user_id,
+        loggedIn: true
     });
- 
+
 });
 
 
