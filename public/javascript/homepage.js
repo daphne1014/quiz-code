@@ -114,8 +114,10 @@ async function StopQuiz(){
         if (!response.ok) {
           alert(response.statusText);
         }
+        window.location.assign(window.location.href+"dashboard");
     }
 
 }
 $('#start-stop').click(StartStopQuiz);
 $('#submit-answer').click(SubmitAnswer);
+$("#show-answer").hide(); 

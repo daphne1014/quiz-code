@@ -1,31 +1,101 @@
-<div class="flex-wraper max-w-6xl  px-10 m-4 p-4 bg-white  shadow-md">
+<main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
+    <div class="container mx-auto px-6 py-8">
+        <h3 class="text-gray-700 text-3xl font-medium">Dashboard</h3>
+        <div class="mt-4">
+            <div class="flex flex-wrap -mx-6">
+                <div class="w-full px-6 sm:w-1/2 xl:w-1/4">
+                    <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-green-300">
+                        <img class="h-18 text-white"
+                            src="https://www.svgrepo.com/show/324119/exam-test-checklist-online-learning-education-online-document.svg">
+                        <div class="mx-5">
+                            <h5 id="last-result" class="text-2xl font-semibold text-gray-700">
+                                {{lastScore}}
+                            </h5>
+                            <div class="text-gray-500">Last result</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-6 sm:w-1/2 xl:w-1/4">
+                    <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-indigo-300">
+                        <img class="h-18 text-white"
+                            src="https://www.svgrepo.com/show/324120/graduation-education-cap-mortarboard-graduate.svg">
+                        <div class="mx-5">
+                            <h4 id="total-result" class="text-2xl font-semibold text-gray-700"> {{totalScore}}</h4>
+                            <div class="text-gray-500">Total score</div>
+                        </div>
+                    </div>
+                </div>
+         <div class="w-full px-6 sm:w-1/2 xl:w-1/4">
+                    <a href="/dashboard/question" class="flex items-center px-5 py-6 shadow-sm rounded-md bg-pink-300 hover:bg-pink-400">
+                        <img class="h-18 text-white"
+                            src="https://www.svgrepo.com/show/324113/writing-education-learning-pencil-note-write-notebook.svg">
+                        <div class="mx-5">
+                            <h4 class="text-2xl font-semibold text-gray-700">Add question</h4>
 
-    <div class="bg-white items-center justify-center font-family-karla h-120">
-        <div class-" w-full flex items-center justify-center">
-            <div class="bg-white w-1/3 mt-10 rounded-lg items-center justify-center">
-                <div class="flex items-center justify-center pt-10 flex-col">
-                    <img src="https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png"
-                        class="rounded-full w-32">
-                        <h1>Username: {{user.username}}</h1>
-                        <h1>Email: {{user.email}}</h1>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full px-6 sm:w-1/2 xl:w-1/4 ">
+                    <a href="/" class="flex items-center px-5 py-6 shadow-sm rounded-md bg-blue-300 hover:bg-blue-400">
+                        <img class="h-18 text-white"
+                            src="https://www.svgrepo.com/show/324109/training-elearning-education-tablet-online-electronics.svg">
+                        <div class="mx-5">
+                            <h4 class="text-2xl font-semibold text-gray-700">Take a quiz</h4>
+
+                        </div>
+                    </a>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="flex-col  rounded-md mx-auto  px-10 mt-8 p-4 bg-white   shadow-md">
+
+            <div class="bg-white font-family-karla ">
+  <div class="w-full text-center">
+                        <h2>Score Summary</h2>
+                    </div>
+                <div class=" flex  items-center  m-4 mx-auto sm:w-full xl:w-1/2">
+                    {{#if scores.length}}
+                  
+                   
+                        <canvas id="myChart"></canvas>
+                   
+
+                    {{/if}}
+                    {{#unless scores.length}}
+
+                    <h2>Please take the quiz to view the summary</h2>
+                    {{/unless}}
                 </div>
             </div>
         </div>
 
-        <div class="w-full flex flex-wrap m-4 content-center">
-            {{#if scores.length}}
-            <div class="w-full text-center">
-                <h2>Score Summary</h2>
+        <div class="flex flex-col mt-8">
+            <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+                <div
+                    class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+                    <table class="min-w-full">
+                        <tbody class="bg-white">
+                            
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="chart-container" style="position: relative; width:80vw">
-                <canvas id="myChart"></canvas>
-            </div>
-            {{/if}}
-            {{#unless scores.length}}
-            <h2>Please take the quiz to view the summary</h2>
-            {{/unless}}
-        </div>
+
+    <div class="w-full text-center">
+            <h1>Profile Information</h1>
+                <div class="flex items-center justify-center pt-10 flex-col">
+                    <img src="https://media.istockphoto.com/vectors/male-default-avatar-profile-icon-man-face-silhouette-person-vector-vector-id1223477625?b=1&k=20&m=1223477625&s=612x612&w=0&h=KVyP-ycbPbyeU6F8LApfeGB_9heimJMVu4d5GAsd48E="
+                        class="rounded-full w-32">
+
+                        <h1>Username: {{username}}</h1>
+                        <h1>Email: {{email}}</h1>
+                </div>
     </div>
-</div>
+</main>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="/javascript/dashboard.js"></script>
