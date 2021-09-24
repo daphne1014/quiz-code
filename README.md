@@ -1,5 +1,5 @@
 # quiz-code [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-A quiz website that allows users to practice that helps to practice coding skills with true or false quiz questions.
+We have created a platform where students can boost their knowledge of coding while answering complex true or false questions, tracking progress, while protecting their progress. 
 
 ## Technologies Used
 
@@ -54,4 +54,5 @@ THEN I am presented with an interative chart that shows 10 most recent quiz resu
 
   [Irina-Golubitsky](https://github.com/Irina-Golubitsky)
   [daphne1014](https://github.com/daphne1014).
+  [megwatson88](https://github.com/megwatson88).
   
