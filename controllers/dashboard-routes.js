@@ -23,8 +23,8 @@ router.get('/', withAuth, (req, res) => {
              let correctSum=0; 
              let totalSum=0; 
              for (i=0;i<scores.length;i++){
-                correctSum=correctSum + scores[scores.length-1].correct;
-                totalSum= totalSum+ scores[scores.length-1].total;
+                correctSum=correctSum + scores[i].correct;
+                totalSum= totalSum+ scores[i].total;
              }
              totalSc=parseInt(correctSum*100/totalSum);
              totalScore= `${totalSc}%  -  ${correctSum}/ ${totalSum}`
@@ -45,6 +45,16 @@ router.get('/', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
+
+router.get('/question/', withAuth, (req, res) => {
+           
+    res.render('add-question', {
+      user_id: req.session.user_id,
+      loggedIn: true
+    });
+ 
+});
+
 
 
 module.exports = router;
