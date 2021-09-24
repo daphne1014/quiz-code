@@ -10,7 +10,7 @@ We have created a platform where students can boost their knowledge of coding wh
 
 ## Description 
 
-A website that allows users to sign up using their email address. They can take the quiz, save their scores and view their progress on their dashboard.
+A website that allows users to sign up using their email address. Users can then take the quiz and track their progress. Users can then focus thier attetion where they need help most. 
 
 ```
 WHEN I open the homepage I am click start quiz
