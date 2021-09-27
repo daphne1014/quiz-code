@@ -36,7 +36,4 @@ const getData = fetch(`/api/users/${user_id}`)
 
     
 
-// console.log(scores)// 
 
-
-// will need to change the data and data sets so that it gets it from db

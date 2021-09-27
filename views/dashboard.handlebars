@@ -1,6 +1,8 @@
 <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
     <div class="container mx-auto px-6 py-8">
         <h3 class="text-gray-700 text-3xl font-medium">Dashboard</h3>
+
+        {{!-- last score, total scrore, add question, take a qiz section beggining --}}
         <div class="mt-4">
             <div class="flex flex-wrap -mx-6">
                 <div class="w-full px-6 sm:w-1/2 xl:w-1/4">
@@ -25,8 +27,9 @@
                         </div>
                     </div>
                 </div>
-         <div class="w-full px-6 sm:w-1/2 xl:w-1/4">
-                    <a href="/dashboard/question" class="flex items-center px-5 py-6 shadow-sm rounded-md bg-pink-300 hover:bg-pink-400">
+                <div class="w-full px-6 sm:w-1/2 xl:w-1/4">
+                    <a href="/dashboard/question"
+                        class="flex items-center px-5 py-6 shadow-sm rounded-md bg-pink-300 hover:bg-pink-400">
                         <img class="h-18 text-white"
                             src="https://www.svgrepo.com/show/324113/writing-education-learning-pencil-note-write-notebook.svg">
                         <div class="mx-5">
@@ -46,55 +49,46 @@
                     </a>
                 </div>
 
-
+                {{!-- last score, total scrore, add question, take a qiz section end --}}
 
             </div>
         </div>
 
-        <div class="flex-col  rounded-md mx-auto  px-10 mt-8 p-4 bg-white   shadow-md">
+        <div class="flex-col  rounded-md mx-auto   mt-8 p-4 bg-white   shadow-md">
 
             <div class="bg-white font-family-karla ">
-  <div class="w-full text-center">
-                        <h2>Score Summary</h2>
-                    </div>
+                <div class="w-full text-center">
+                    <h2>Score Summary</h2>
+                </div>
+                {{!-- show chart --}}
                 <div class=" flex  items-center  m-4 mx-auto sm:w-full xl:w-1/2">
                     {{#if scores.length}}
-                  
-                   
-                        <canvas id="myChart"></canvas>
-                   
+
+
+                    <canvas id="myChart"></canvas>
+
 
                     {{/if}}
                     {{#unless scores.length}}
 
-                    <h2>Please take the quiz to view the summary</h2>
+                   <div class="text-center w-full text-xl italic text-blue-800">Please take the quiz to view the summary</div>
                     {{/unless}}
                 </div>
             </div>
         </div>
 
-        <div class="flex flex-col mt-8">
-            <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-                <div
-                    class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
-                    <table class="min-w-full">
-                        <tbody class="bg-white">
-                            
-                        </tbody>
-                    </table>
-                </div>
-            </div>
 
-    <div class="w-full text-center">
+        {{!-- profile section --}}
+        <div class="w-full text-center mt-4 ">
             <h1>Profile Information</h1>
-                <div class="flex items-center justify-center pt-10 flex-col">
-                    <img src="https://media.istockphoto.com/vectors/male-default-avatar-profile-icon-man-face-silhouette-person-vector-vector-id1223477625?b=1&k=20&m=1223477625&s=612x612&w=0&h=KVyP-ycbPbyeU6F8LApfeGB_9heimJMVu4d5GAsd48E="
-                        class="rounded-full w-32">
+            <div class="flex items-center justify-center pt-10 flex-col">
+                <img src="https://media.istockphoto.com/vectors/male-default-avatar-profile-icon-man-face-silhouette-person-vector-vector-id1223477625?b=1&k=20&m=1223477625&s=612x612&w=0&h=KVyP-ycbPbyeU6F8LApfeGB_9heimJMVu4d5GAsd48E="
+                    class="rounded-full w-32">
 
-                        <h1>Username: {{username}}</h1>
-                        <h1>Email: {{email}}</h1>
-                </div>
-    </div>
+                <h1>Username: {{username}}</h1>
+                <h1>Email: {{email}}</h1>
+            </div>
+        </div>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

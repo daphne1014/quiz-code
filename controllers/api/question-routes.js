@@ -75,7 +75,7 @@ router.put('/:id',(req, res) => {
     res.status(500).json(err);
   });
 });
-
+// delete question
 router.delete('/:id', (req, res) => {
   console.log('id', req.params.id);
   Question.destroy({

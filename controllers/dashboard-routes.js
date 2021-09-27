@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Score } = require('../models');
 const withAuth = require('../utils/auth');
 
-
+// get user scores by user id
 router.get('/', withAuth, (req, res) => {
     Score.findAll({
         where: {
@@ -27,9 +27,10 @@ router.get('/', withAuth, (req, res) => {
             let totalScore = 'No data';
 
             if (scores.length > 0) {
+                // last test result
                 lastScore = `${scores[scores.length - 1].score}%  -  ${scores[scores.length - 1].correct}/ ${scores[scores.length - 1].total}`;
                
-
+                //total result
                 for (i = 0; i < scores.length; i++) {
                     correctSum = correctSum + scores[i].correct;
                     totalSum = totalSum + scores[i].total;
@@ -39,9 +40,7 @@ router.get('/', withAuth, (req, res) => {
                 totalScore = `${totalSc}%  -  ${correctSum}/ ${totalSum}`
             }
 
-
-
-
+            // render dashboard
             res.render('dashboard', {
                 scores,
                 lastScore,
@@ -57,7 +56,7 @@ router.get('/', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
-
+// render question.handlebars to add new question
 router.get('/question/', withAuth, (req, res) => {
 
     res.render('add-question', {
@@ -67,6 +66,6 @@ router.get('/question/', withAuth, (req, res) => {
 
 });
 
-
+//  export router
 
 module.exports = router;
